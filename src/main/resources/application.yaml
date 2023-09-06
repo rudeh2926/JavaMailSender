@@ -1,0 +1,29 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: ${URL}
+    username: ${USERNAME}
+    password: ${PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      show_sql: true
+
+    mail:
+      host: smtp.gmail.com
+      port: 587
+      username: ${EMAIL}
+      password: ${EMAIL-PASSWORD}
+      properties:
+        mail.smtp.auth: true
+        mail.smtp.starttls.enable: true
+
+  jackson:
+    property-naming-strategy: SNAKE_CASE
+
+  jwt:
+    key: ${JWT_KEY}
+    live:
+      accessToken: ${ACCESS_TOKEN_TIME}
+      refreshToken: ${REFRESH_TOKEN_TIME}
