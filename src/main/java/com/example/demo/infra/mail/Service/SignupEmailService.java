@@ -31,6 +31,11 @@ public class SignupEmailService {
     }
 
     public String sendVerificationCode(String email) {
+
+        if (redisTemplate.opsForValue().get(email) != null) {
+            return null;
+        }
+
         String verificationCode = generateVerificationCode();
         SimpleMailMessage message = new SimpleMailMessage();
         message.setTo(email);
