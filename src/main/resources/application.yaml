@@ -10,9 +10,9 @@ spring:
     properties:
       show_sql: true
 
-   redis:
-      port: 6379
-      host: localhost
+  redis:
+    host: localhost
+    port: 6379
 
   mail:
     host: smtp.gmail.com
@@ -24,10 +24,10 @@ spring:
       mail.smtp.starttls.enable: true
 
   jackson:
-    property-naming-strategy: SNAKE_CASE
+    property-naming-strategy : SNAKE_CASE
 
-jwt:
-  key: ${JWT_KEY}
-  live:
-    accessToken : ${ACCESS_TOKEN_TIME}
-    refreshToken: ${REFRESH_TOKEN_TIME}
+jwt :
+  key : ${JWT_KEY}
+  live :
+    accessTokenTimeMillis : ${ACCESS_TOKEN_TIME}
+    refreshTokenTimeMillis : ${REFRESH_TOKEN_TIME}
