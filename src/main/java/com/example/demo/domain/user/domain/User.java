@@ -1,4 +1,4 @@
-package com.example.demo.domain.User.domain;
+package com.example.demo.domain.user.domain;
 
 import com.example.demo.global.entity.BaseEntity;
 import lombok.*;
@@ -12,7 +12,7 @@ import javax.persistence.Entity;
 @Entity
 public class User extends BaseEntity {
 
-    private String accountId;
+    private String nickname;
 
     private String email;
 

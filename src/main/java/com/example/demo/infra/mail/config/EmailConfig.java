@@ -1,4 +1,4 @@
-package com.example.demo.global.config;
+package com.example.demo.infra.mail.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

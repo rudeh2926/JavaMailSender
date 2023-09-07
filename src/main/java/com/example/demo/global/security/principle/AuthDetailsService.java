@@ -1,7 +1,7 @@
 package com.example.demo.global.security.principle;
 
-import com.example.demo.domain.User.domain.User;
-import com.example.demo.domain.User.domain.repository.UserRepository;
+import com.example.demo.domain.user.domain.User;
+import com.example.demo.domain.user.domain.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.*;
 import org.springframework.stereotype.Service;

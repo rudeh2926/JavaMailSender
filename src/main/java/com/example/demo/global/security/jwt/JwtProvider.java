@@ -1,6 +1,6 @@
 package com.example.demo.global.security.jwt;
 
-import com.example.demo.domain.User.domain.User;
+import com.example.demo.domain.user.domain.User;
 import com.example.demo.global.error.exception.BusinessException;
 import com.example.demo.global.error.exception.ErrorCode;
 import com.example.demo.global.security.jwt.dto.TokenResponse;
