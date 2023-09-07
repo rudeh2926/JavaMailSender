@@ -38,6 +38,7 @@ public class SignupEmailService {
 
         String verificationCode = generateVerificationCode();
         SimpleMailMessage message = new SimpleMailMessage();
+
         message.setTo(email);
         message.setSubject("회원 가입 인증 코드");
         message.setText("인증 코드: " + verificationCode);
