@@ -9,6 +9,9 @@ public enum ErrorCode {
 
     USER_NOT_FOUND(404, "User Not Found"),
 
+    JWT_EXPIRED(401, "Jwt Expired"),
+    JWT_INVALID(401, "Jwt Invalid"),
+
     BAD_REQUEST(400, "Bad request"),
     INTERNAL_SERVER_ERROR(500, "Internal server error");
 
