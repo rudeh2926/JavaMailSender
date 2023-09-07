@@ -44,7 +44,7 @@ public class SignupEmailService {
 
         mailSender.send(message);
 
-        redisTemplate.opsForValue().set(email, verificationCode, 180, TimeUnit.SECONDS);
+        redisTemplate.opsForValue().set(email, verificationCode, 360, TimeUnit.SECONDS);
         return verificationCode;
     }
 }
