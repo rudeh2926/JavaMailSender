@@ -1,14 +1,13 @@
 package com.example.demo.global.security.jwt.entity;
 
 import lombok.*;
-import org.hibernate.validator.internal.IgnoreForbiddenApisErrors;
 import org.springframework.data.redis.core.RedisHash;
 
+import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Getter
 @AllArgsConstructor
-@Builder
 @RedisHash
 public class RefreshToken {
 

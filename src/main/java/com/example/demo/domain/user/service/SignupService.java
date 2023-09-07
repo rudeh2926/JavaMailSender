@@ -40,6 +40,7 @@ public class SignupService {
                         .email(request.getEmail())
                         .nickname(request.getNickname())
                         .password(passwordEncoder.encode(request.getPassword()))
+                        .gender(request.getGender())
                         .build());
     }
 }
