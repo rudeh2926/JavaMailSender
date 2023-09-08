@@ -34,7 +34,6 @@ public class SignupService {
             throw EmailCodeMissMatchException.EXCEPTION;
         }
 
-
         userRepository.save(
                 User.builder()
                         .email(request.getEmail())

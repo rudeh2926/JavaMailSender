@@ -26,8 +26,8 @@ spring:
   jackson:
     property-naming-strategy : SNAKE_CASE
 
-jwt :
-  key : ${JWT_KEY}
-  live :
-    accessToken : ${ACCESS_TOKEN_TIME}
-    refreshToken : ${REFRESH_TOKEN_TIME}
+  jwt :
+    key : ${JWT_KEY}
+    live :
+      accessToken : ${ACCESS_TOKEN_TIME}
+      refreshToken : ${REFRESH_TOKEN_TIME}

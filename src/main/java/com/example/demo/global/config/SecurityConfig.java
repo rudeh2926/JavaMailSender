@@ -22,6 +22,7 @@ public class SecurityConfig {
         return new BCryptPasswordEncoder();
     }
 
+    @Bean
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .formLogin().disable()
@@ -29,13 +30,9 @@ public class SecurityConfig {
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 .authorizeRequests()
-                .antMatchers("/image/upload").authenticated()
-                // 나머지 요청은 모든 사용자에게 허용합니다.
-                // 주의: 이 부분을 실제 요구 사항에 맞게 수정해야 합니다.
-                // 예: 인증된 사용자만 접근하도록 변경 등
+                .antMatchers("/user", "/user/email/code").authenticated()
                 .anyRequest().permitAll()
                 .and()
-                // JwtTokenFilter를 UsernamePasswordAuthenticationFilter 앞에 추가합니다.
                 .addFilterBefore(new JwtTokenFilter(jwtProvider), UsernamePasswordAuthenticationFilter.class);
     }
 }
