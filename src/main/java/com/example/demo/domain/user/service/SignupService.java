@@ -4,7 +4,7 @@ import com.example.demo.domain.user.domain.User;
 import com.example.demo.domain.user.domain.repository.UserRepository;
 import com.example.demo.domain.user.exception.*;
 import com.example.demo.domain.user.presentation.dto.request.SignupRequest;
-import com.example.demo.infra.mail.Service.SignupEmailService;
+import com.example.demo.infra.mail.Service.CreateEmailCodeService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -15,7 +15,7 @@ import org.springframework.transaction.annotation.Transactional;
 public class SignupService {
 
     private final UserRepository userRepository;
-    private final SignupEmailService signupEmailService;
+    private final CreateEmailCodeService createEmailCodeServicce;
     private final PasswordEncoder passwordEncoder;
 
     @Transactional
@@ -29,11 +29,6 @@ public class SignupService {
             throw PasswordMissMatchException.EXCEPTION;
         }
 
-
-        if (!request.getEmailCodeValid().equals(signupEmailService.sendVerificationCode(request.getEmail()))) {
-            throw EmailCodeMissMatchException.EXCEPTION;
-        }
-
         userRepository.save(
                 User.builder()
                         .email(request.getEmail())
@@ -42,4 +37,5 @@ public class SignupService {
                         .gender(request.getGender())
                         .build());
     }
+
 }

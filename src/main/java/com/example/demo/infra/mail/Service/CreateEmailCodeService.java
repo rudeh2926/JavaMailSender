@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
 
 @Service
 @RequiredArgsConstructor
-public class SignupEmailService {
+public class CreateEmailCodeService {
 
     private final JavaMailSender mailSender;
     private final StringRedisTemplate redisTemplate;
