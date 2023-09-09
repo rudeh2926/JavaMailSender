@@ -19,7 +19,8 @@ public class EmailController {
     }
 
     @PostMapping("/resend")
-    public void resendEmailCode(@RequestParam String email) {
-        resendCodeRequestService.ResendCode(email);
+    public String resendEmailCode(@RequestParam String email) {
+       return resendCodeRequestService.ResendCode(email);
     }
+
 }

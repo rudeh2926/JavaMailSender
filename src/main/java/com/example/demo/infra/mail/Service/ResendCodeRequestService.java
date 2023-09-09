@@ -9,10 +9,10 @@ import org.springframework.stereotype.Service;
 public class ResendCodeRequestService {
 
     private final StringRedisTemplate stringRedisTemplate;
-    private final CreateEmailCodeService createEmailCodeServicce;
+    private final CreateEmailCodeService createEmailCodeService;
 
-    public void ResendCode(String email) {
+    public String ResendCode(String email) {
         stringRedisTemplate.delete(email);
-        createEmailCodeServicce.sendVerificationCode(email);
+        return createEmailCodeService.sendVerificationCode(email);
     }
 }
