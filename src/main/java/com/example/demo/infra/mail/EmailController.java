@@ -1,7 +1,7 @@
 package com.example.demo.infra.mail;
 
-import com.example.demo.infra.mail.Service.ResendCodeRequestService;
-import com.example.demo.infra.mail.Service.CreateEmailCodeService;
+import com.example.demo.infra.mail.service.ResendCodeRequestService;
+import com.example.demo.infra.mail.service.CreateEmailCodeService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

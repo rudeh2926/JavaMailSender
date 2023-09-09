@@ -1,4 +1,4 @@
-package com.example.demo.infra.mail.Service;
+package com.example.demo.infra.mail.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.redis.core.StringRedisTemplate;
