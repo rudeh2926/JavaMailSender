@@ -11,7 +11,7 @@ public enum ErrorCode {
     USER_NOT_FOUND(404, "User Not Found"),
     NICKNAME_OR_EMAIL_ALREADY_EXISTS(409, "Nickname Or EMAIL Already Exists"),
     PASSWORD_MISS_MATCH(400, "Password Miss Match"),
-    EMAILCODE_MISS_MATCH(400, "EmailCode Miss Match"),
+    EMAILCODE_OR_EMAIL_MISS_MATCH(400, "EmailCode Or EMAIL Miss Match"),
 
     JWT_EXPIRED(401, "Jwt Expired"),
     JWT_INVALID(401, "Jwt Invalid"),
