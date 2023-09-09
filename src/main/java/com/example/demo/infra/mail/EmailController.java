@@ -11,15 +11,15 @@ import org.springframework.web.bind.annotation.*;
 public class EmailController {
 
     private final ResendCodeRequestService resendCodeRequestService;
-    private final CreateEmailCodeService createEmailCodeServicce;
+    private final CreateEmailCodeService createEmailCodeService;
 
     @PostMapping
-    public String requestEmailCode(String email) {
-        return createEmailCodeServicce.sendVerificationCode(email);
+    public String requestEmailCode(@RequestParam String email) {
+        return createEmailCodeService.sendVerificationCode(email);
     }
 
     @PostMapping("/resend")
-    public void resendEmailCode(String email) {
+    public void resendEmailCode(@RequestParam String email) {
         resendCodeRequestService.ResendCode(email);
     }
 }
