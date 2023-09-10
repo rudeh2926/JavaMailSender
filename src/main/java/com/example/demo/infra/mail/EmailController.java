@@ -6,7 +6,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("email/code")
+@RequestMapping("/email/code")
 @RequiredArgsConstructor
 public class EmailController {
 
