@@ -25,4 +25,9 @@ public class User extends BaseEntity {
     public void modifyEmail(String email) {
         this.email = email;
     }
+
+    public void  modifyNicknameAndPassword(String nickname, String password) {
+        this.nickname = nickname;
+        this.password = password;
+    }
 }
