@@ -21,4 +21,8 @@ public class User extends BaseEntity {
 
     @Enumerated(EnumType.STRING)
     private Gender gender;
+
+    public void modifyEmail(String email) {
+        this.email = email;
+    }
 }
