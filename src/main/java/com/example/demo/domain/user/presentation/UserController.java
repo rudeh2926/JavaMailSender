@@ -1,7 +1,7 @@
 package com.example.demo.domain.user.presentation;
 
-import com.example.demo.domain.user.presentation.dto.request.SignupRequest;
-import com.example.demo.domain.user.service.SignupService;
+import com.example.demo.domain.user.presentation.dto.request.UserSignupRequest;
+import com.example.demo.domain.user.service.UserSignupService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 public class UserController {
 
-    private final SignupService signupService;
+    private final UserSignupService userSignupService;
 
     @PostMapping
-    public void signup(@RequestBody SignupRequest request) {
-        signupService.signup(request);
+    public void signup(@RequestBody UserSignupRequest request) {
+        userSignupService.signup(request);
     }
 }
