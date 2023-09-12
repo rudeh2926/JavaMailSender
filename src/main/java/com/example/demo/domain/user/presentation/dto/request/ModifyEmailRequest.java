@@ -8,6 +8,6 @@ import lombok.NoArgsConstructor;
 public class ModifyEmailRequest {
 
     private String email;
-    private String emailCodeValid;
+    private String emailCode;
     private String password;
 }
