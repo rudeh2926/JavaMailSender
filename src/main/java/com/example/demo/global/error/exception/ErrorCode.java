@@ -8,7 +8,7 @@ import lombok.Getter;
 public enum ErrorCode {
 
 
-    USER_NOT_FOUND(404, "User Not Found"),
+    EMAIL_NOT_FOUND(404, "Email Not Found"),
     NICKNAME_OR_EMAIL_ALREADY_EXISTS(409, "Nickname Or EMAIL Already Exists"),
     PASSWORD_MISS_MATCH(400, "Password Miss Match"),
     EMAILCODE_OR_EMAIL_MISS_MATCH(400, "EmailCode Or EMAIL Miss Match"),

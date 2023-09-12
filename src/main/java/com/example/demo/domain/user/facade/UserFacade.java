@@ -2,7 +2,7 @@ package com.example.demo.domain.user.facade;
 
 import com.example.demo.domain.user.domain.User;
 import com.example.demo.domain.user.domain.repository.UserRepository;
-import com.example.demo.domain.user.exception.UserNotFoundException;
+import com.example.demo.domain.user.exception.EmailNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -20,7 +20,7 @@ public class UserFacade {
 
     public User getUserByAccountId(String email) {
         return userRepository.findByEmail(email)
-                .orElseThrow(() -> UserNotFoundException.EXCEPTION);
+                .orElseThrow(() -> EmailNotFoundException.EXCEPTION);
     }
 
 }

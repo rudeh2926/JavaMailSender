@@ -21,10 +21,10 @@ public class ModifyNicknameAndPasswordService {
 
         User user = userFacade.getCurrentUser();
 
-        if (passwordEncoder.matches(request.getPassword(), user.getPassword())) {
+        if (passwordEncoder.matches(request.getPasswordValid(), user.getPassword())) {
             throw PasswordMissMatchException.EXCEPTION;
         }
 
-        user.modifyNicknameAndPassword(request.getNickname(), passwordEncoder.encode(request.getPassword()));
+        user.modifyNicknameAndPassword(request.getNickname(), passwordEncoder.encode(request.getPasswordValid()));
     }
 }

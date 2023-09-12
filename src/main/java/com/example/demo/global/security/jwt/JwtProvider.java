@@ -55,10 +55,11 @@ public class JwtProvider {
     public String generateRefreshToken(String email) {
         String refreshToken = generateToken(email, "refresh", refreshTokenTime);
 
-        refreshTokenRepository.save(new RefreshToken(
-                email,
-                refreshToken, refreshTokenTime
-        ));
+        refreshTokenRepository.save(
+                RefreshToken.builder()
+                        .email(email)
+                        .refreshTokenTime(refreshTokenTime)
+                        .refreshToken(refreshToken).build());
 
         return refreshToken;
     }
