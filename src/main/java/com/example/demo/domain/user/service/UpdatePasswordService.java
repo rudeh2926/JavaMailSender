@@ -28,11 +28,11 @@ public class UpdatePasswordService {
             throw EmailCodeOrEmailMissMatchException.EXCEPTION;
         }
 
-        if (updatePasswordRequest.getPassword().equals(updatePasswordRequest.getPasswordValid())) {
+        if (updatePasswordRequest.getNewPassword().equals(updatePasswordRequest.getPasswordValid())) {
             throw PasswordMissMatchException.EXCEPTION;
         }
 
-        user.modifyPassword(passwordEncoder.encode(updatePasswordRequest.getPassword()));
+        user.modifyPassword(passwordEncoder.encode(updatePasswordRequest.getNewPassword()));
 
     }
 }

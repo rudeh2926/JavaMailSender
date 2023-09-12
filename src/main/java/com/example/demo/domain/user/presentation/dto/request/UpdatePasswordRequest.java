@@ -9,6 +9,6 @@ public class UpdatePasswordRequest {
 
     private String email;
     private String emailCode;
-    private String password;
+    private String newPassword;
     private String passwordValid;
 }
