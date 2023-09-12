@@ -1,10 +1,9 @@
 package com.example.demo.domain.user.presentation.dto.request;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Getter
-@NoArgsConstructor
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class UpdatePasswordRequest {
 
     private String email;

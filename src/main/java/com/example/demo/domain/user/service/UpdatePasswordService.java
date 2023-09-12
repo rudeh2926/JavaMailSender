@@ -24,11 +24,12 @@ public class UpdatePasswordService {
 
         User user = userFacade.getUserByEmail(updatePasswordRequest.getEmail());
 
-        if (updatePasswordRequest.getEmailCode().equals(redisTemplate.opsForValue().get(updatePasswordRequest.getEmail()))) {
+        if (!updatePasswordRequest.getEmailCode().equals(redisTemplate.opsForValue().get(updatePasswordRequest.getEmail()))) {
             throw EmailCodeOrEmailMissMatchException.EXCEPTION;
         }
 
-        if (updatePasswordRequest.getNewPassword().equals(updatePasswordRequest.getPasswordValid())) {
+
+        if (!updatePasswordRequest.getNewPassword().equals(updatePasswordRequest.getPasswordValid())) {
             throw PasswordMissMatchException.EXCEPTION;
         }
 

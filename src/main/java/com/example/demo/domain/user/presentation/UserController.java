@@ -46,7 +46,7 @@ public class UserController {
 
     @PatchMapping("/update/password")
     public void updatePassword(@RequestBody UpdatePasswordRequest updatePasswordRequest) {
-        updatePasswordService.findPassword(updatePasswordRequest);
+        updatePasswordService.updatePassword(updatePasswordRequest);
     }
 
     @GetMapping("/detaile/info")
