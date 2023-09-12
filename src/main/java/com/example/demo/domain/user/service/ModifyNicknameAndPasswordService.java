@@ -25,6 +25,6 @@ public class ModifyNicknameAndPasswordService {
             throw PasswordMissMatchException.EXCEPTION;
         }
 
-        user.modifyNicknameAndPassword(request.getNickname(), request.getNickname());
+        user.modifyNicknameAndPassword(request.getNickname(), passwordEncoder.encode(request.getPassword()));
     }
 }
