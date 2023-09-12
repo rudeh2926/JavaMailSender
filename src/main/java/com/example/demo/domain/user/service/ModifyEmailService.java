@@ -28,7 +28,7 @@ public class ModifyEmailService {
             throw PasswordMissMatchException.EXCEPTION;
         }
 
-        if (modifyEmailRequest.getEmailCodeValid().equals(redisTemplate.opsForValue().get(modifyEmailRequest.getEmail()))) {
+        if (modifyEmailRequest.getEmailCode().equals(redisTemplate.opsForValue().get(modifyEmailRequest.getEmail()))) {
             throw EmailCodeOrEmailMissMatchException.EXCEPTION;
         }
 
