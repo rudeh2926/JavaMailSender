@@ -1,9 +1,11 @@
 package com.example.demo.domain.user.presentation;
 
+import antlr.Token;
 import com.example.demo.domain.user.presentation.dto.request.*;
 import com.example.demo.domain.user.presentation.dto.response.QueryDetaileMyInfoResponse;
 import com.example.demo.domain.user.presentation.dto.response.QueryMyInfoResponse;
 import com.example.demo.domain.user.service.*;
+import com.example.demo.global.security.jwt.dto.TokenResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -19,12 +21,18 @@ public class UserController {
     private final FindPasswordService findPasswordService;
     private final QueryDetaileMyInfoService queryDetaileMyInfoService;
     private final QueryMyInfoService queryMyInfoService;
+    private final UserLoginService userLoginService;
 
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
     public void signup(@RequestBody UserSignupRequest request) {
         userSignupService.signup(request);
+    }
+
+    @PostMapping("/login")
+    public TokenResponse login(@RequestBody LoginRequest loginRequest) {
+        return userLoginService.login(loginRequest);
     }
 
     @PatchMapping("/modify")
