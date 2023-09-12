@@ -21,10 +21,10 @@ public class QueryDetaileMyInfoService {
 
         User user = userFacade.getCurrentUser();
 
-        if (passwordEncoder.matches(password, user.getPassword())) {
+        if (password.equals(user.getPassword())) {
             throw PasswordMissMatchException.EXCEPTION;
         }
 
-        return new QueryDetaileMyInfoResponse(userFacade.getCurrentUser());
+        return new QueryDetaileMyInfoResponse(user);
     }
 }

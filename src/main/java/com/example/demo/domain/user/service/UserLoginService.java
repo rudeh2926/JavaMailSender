@@ -22,7 +22,7 @@ public class UserLoginService {
 
         User user = userFacade.getUserByEmail(loginRequest.getEmail());
 
-        if (!passwordEncoder.matches(loginRequest.getPassword(), user.getPassword())) {
+        if (loginRequest.getPassword().equals(user.getPassword())) {
             throw PasswordMissMatchException.EXCEPTION;
         }
         return jwtProvider.getToken(user);

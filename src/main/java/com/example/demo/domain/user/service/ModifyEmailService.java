@@ -24,7 +24,7 @@ public class ModifyEmailService {
 
         User user = userFacade.getCurrentUser();
 
-        if (passwordEncoder.matches(modifyEmailRequest.getPassword(), user.getPassword())) {
+        if (modifyEmailRequest.getPassword().equals(user.getPassword())) {
             throw PasswordMissMatchException.EXCEPTION;
         }
 

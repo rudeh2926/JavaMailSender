@@ -21,7 +21,7 @@ public class ModifyNicknameAndPasswordService {
 
         User user = userFacade.getCurrentUser();
 
-        if (passwordEncoder.matches(request.getPassword(), user.getPassword())) {
+        if (request.getPassword().equals(user.getPassword())) {
             throw PasswordMissMatchException.EXCEPTION;
         }
 

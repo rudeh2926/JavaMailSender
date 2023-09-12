@@ -22,7 +22,7 @@ public class FindPasswordService {
     @Transactional
     public void findPassword(FindPasswordRequest findPasswordRequest) {
 
-        User user = userFacade.getUserByAccountId(findPasswordRequest.getEmail());
+        User user = userFacade.getUserByEmail(findPasswordRequest.getEmail());
 
         if (findPasswordRequest.getEmailCode().equals(redisTemplate.opsForValue().get(findPasswordRequest.getEmail()))) {
             throw EmailCodeOrEmailMissMatchException.EXCEPTION;
