@@ -38,7 +38,7 @@ public class UserController {
     }
 
     @PatchMapping("/find/password")
-    public void findPassword(FindPasswordRequest findPasswordRequest) {
+    public void findPassword(@RequestBody FindPasswordRequest findPasswordRequest) {
         findPasswordService.findPassword(findPasswordRequest);
     }
 
