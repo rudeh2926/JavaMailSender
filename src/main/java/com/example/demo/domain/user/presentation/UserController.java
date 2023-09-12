@@ -16,6 +16,7 @@ public class UserController {
     private final UserSignupService userSignupService;
     private final ModifyNicknameAndPasswordService modifyNicknameAndPasswordService;
     private final ModifyEmailService modifyEmailService;
+    private final FindPasswordService findPasswordService;
     private final QueryDetaileMyInfoService queryDetaileMyInfoService;
     private final QueryMyInfoService queryMyInfoService;
 
@@ -34,6 +35,11 @@ public class UserController {
     @PatchMapping("/email/modify")
     public void modifyEmail(@RequestBody ModifyEmailRequest modifyEmailRequest) {
         modifyEmailService.modifyEmail(modifyEmailRequest);
+    }
+
+    @PatchMapping("/find/password")
+    public void findPassword(FindPasswordRequest findPasswordRequest) {
+        findPasswordService.findPassword(findPasswordRequest);
     }
 
     @GetMapping("/detaile/info")

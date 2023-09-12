@@ -30,4 +30,8 @@ public class User extends BaseEntity {
         this.nickname = nickname;
         this.password = password;
     }
+
+    public void modifyPassword(String password) {
+        this.password = password;
+    }
 }
