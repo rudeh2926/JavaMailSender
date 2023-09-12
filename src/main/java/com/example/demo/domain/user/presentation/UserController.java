@@ -1,6 +1,5 @@
 package com.example.demo.domain.user.presentation;
 
-import antlr.Token;
 import com.example.demo.domain.user.presentation.dto.request.*;
 import com.example.demo.domain.user.presentation.dto.response.QueryDetaileMyInfoResponse;
 import com.example.demo.domain.user.presentation.dto.response.QueryMyInfoResponse;
@@ -18,7 +17,7 @@ public class UserController {
     private final UserSignupService userSignupService;
     private final ModifyNicknameAndPasswordService modifyNicknameAndPasswordService;
     private final ModifyEmailService modifyEmailService;
-    private final FindPasswordService findPasswordService;
+    private final UpdatePasswordService updatePasswordService;
     private final QueryDetaileMyInfoService queryDetaileMyInfoService;
     private final QueryMyInfoService queryMyInfoService;
     private final UserLoginService userLoginService;
@@ -45,9 +44,9 @@ public class UserController {
         modifyEmailService.modifyEmail(modifyEmailRequest);
     }
 
-    @PatchMapping("/find/password")
-    public void findPassword(@RequestBody FindPasswordRequest findPasswordRequest) {
-        findPasswordService.findPassword(findPasswordRequest);
+    @PatchMapping("/update/password")
+    public void updatePassword(@RequestBody UpdatePasswordRequest updatePasswordRequest) {
+        updatePasswordService.findPassword(updatePasswordRequest);
     }
 
     @GetMapping("/detaile/info")
