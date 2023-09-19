@@ -21,6 +21,7 @@ public class UserController {
     private final QueryDetaileMyInfoService queryDetaileMyInfoService;
     private final QueryMyInfoService queryMyInfoService;
     private final UserLoginService userLoginService;
+    private final UserLogoutService userLogoutService;
 
 
     @ResponseStatus(HttpStatus.CREATED)
@@ -57,5 +58,10 @@ public class UserController {
     @GetMapping("/info")
     public QueryMyInfoResponse queryMyInfo() {
        return queryMyInfoService.queryMyInfo();
+    }
+
+    @DeleteMapping("/logout")
+    public void logout() {
+        userLogoutService.logout();
     }
 }
